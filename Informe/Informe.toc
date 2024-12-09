@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{3}{}%
+\contentsline {section}{\numberline {2}Análisis Descriptivo de los datos}{3}{}%
+\contentsline {section}{\numberline {3}Análisis de la distribución}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Estimación de parámetros}{4}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Estimación Puntual}{4}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Estimación por Intervalos}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Pruebas de Hipótesis}{4}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Pruebas de Hipótesis para una población}{4}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Pruebas de Hipótesis para dos poblaciones}{4}{}%
+\contentsline {section}{\numberline {4}Correlación e Independencia}{5}{}%
