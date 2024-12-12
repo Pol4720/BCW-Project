@@ -11,9 +11,6 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,positioning}
 
-
-
-
 \definecolor{colorgreen}{rgb}{0,0.6,0}
 \definecolor{colorgray}{rgb}{0.5,0.5,0.5}
 \definecolor{colorpurple}{rgb}{0.58,0,0.82}
@@ -81,6 +78,52 @@ framerule=1pt
 
 \section{Análisis Descriptivo de los datos}
 
+\begin{table}[ht]
+    \centering
+    \caption{Descripción de Variables del Dataset Breast Cancer Wisconsin (Diagnostics)}
+    \label{tab:breast_cancer_variables}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{|p{3.5cm}|p{5.5cm}|p{3.5cm}|p{3.5cm}|}
+            \hline
+            \textbf{Variable} & \textbf{Descripción} & \textbf{Clasificación Estadística} & \textbf{Escala de Medición} \\
+            \hline
+            ID & Identificador único del paciente & Categórica & Nominal \\
+            diagnosis & Diagnóstico del tumor (M = maligno, B = benigno) & Categórica & Nominal \\
+            radius\_mean & Radio medio del tumor en mm & Continua & Razón \\
+            texture\_mean & Textura media del tumor & Continua & Razón \\
+            perimeter\_mean & Perímetro medio del tumor en mm & Continua & Razón \\
+            area\_mean & Área media del tumor en mm² & Continua & Razón \\
+            smoothness\_mean & Suavidad media del tumor & Continua & Razón \\
+            compactness\_mean & Compacidad media del tumor & Continua & Razón \\
+            concavity\_mean & Concavidad media del tumor & Continua & Razón \\
+            concave points\_mean & Puntos cóncavos medios del tumor & Continua & Razón \\
+            symmetry\_mean & Simetría media del tumor & Continua & Razón \\
+            fractal dimension\_mean & Dimensión fractal media del tumor & Continua & Razón \\
+            radius\_se & Desviación estándar del radio del tumor & Continua & Razón \\
+            texture\_se & Desviación estándar de la textura del tumor & Continua & Razón \\
+            perimeter\_se & Desviación estándar del perímetro del tumor & Continua & Razón \\
+            area\_se & Desviación estándar del área del tumor & Continua & Razón \\
+            smoothness\_se & Desviación estándar de la suavidad del tumor & Continua & Razón \\
+            compactness\_se & Desviación estándar de la compacidad del tumor & Continua & Razón \\
+            concavity\_se & Desviación estándar de la concavidad del tumor & Continua & Razón \\
+            concave points\_se & Desviación estándar de los puntos cóncavos del tumor & Continua & Razón \\
+            symmetry\_se & Desviación estándar de la simetría del tumor & Continua & Razón \\
+            fractal dimension\_se & Desviación estándar de la dimensión fractal del tumor & Continua & Razón \\
+            radius\_worst & Radio máximo del tumor en mm & Continua & Razón \\
+            texture\_worst & Textura máxima del tumor & Continua & Razón \\
+            perimeter\_worst & Perímetro máximo del tumor en mm & Continua & Razón \\
+            area\_worst & Área máxima del tumor en mm² & Continua & Razón \\
+            smoothness\_worst & Suavidad máxima del tumor & Continua & Razón \\
+            compactness\_worst & Compacidad máxima del tumor & Continua & Razón \\
+            concavity\_worst & Concavidad máxima del tumor & Continua & Razón \\
+            concave points\_worst & Puntos cóncavos máximos del tumor & Continua & Razón \\
+            symmetry\_worst & Simetría máxima del tumor & Continua & Razón \\
+            fractal dimension\_worst & Dimensión fractal máxima del tumor & Continua & Razón \\
+            \hline
+        \end{tabular}
+    }
+\end{table}
+
 
 \newpage
 
@@ -95,6 +138,9 @@ framerule=1pt
 
 \subsection{Pruebas de Hipótesis}
 
+
+\section{Pruebas de Normalidad}
+
 \subsubsection{Pruebas de Hipótesis para una población}
 
 \subsubsection{Pruebas de Hipótesis para dos poblaciones}
@@ -105,47 +151,3 @@ framerule=1pt
 
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
