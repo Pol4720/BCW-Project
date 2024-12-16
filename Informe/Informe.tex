@@ -76,7 +76,21 @@ framerule=1pt
 
 \section{Introducción}
 
+Este proyecto de análisis estadístico, realizado como parte del plan de estudios de Ciencia de la Computación, se centra en el conjunto de datos "Breast Cancer Wisconsin (Diagnostics)". Este dataset, ampliamente utilizado en la investigación de aprendizaje automático y análisis de datos biomédicos, contiene información crucial para la clasificación de tumores mamarios como benignos o malignos. Nuestro objetivo es ir más allá de una simple clasificación y profundizar en un análisis estadístico exhaustivo, explorando las características de los datos y sus relaciones intrínsecas.\\
+
+En una primera etapa, emplearemos técnicas de estadística descriptiva para obtener una comprensión inicial del dataset. Esto incluirá el cálculo de medidas de tendencia central (media, mediana, moda) y medidas de dispersión (desviación estándar, varianza, rango intercuartílico) para cada variable, proporcionando una visión general de la distribución de los datos. Además, analizaremos la curtosis para determinar la forma de las distribuciones y la presencia de valores atípicos.\\
+
+Posteriormente, nos adentraremos en el ámbito de la estadística inferencial. Comenzaremos con la estimación puntual y por intervalos de confianza de parámetros clave, como la media y la proporción, para inferir características de la población a partir de la muestra disponible. Realizaremos pruebas de normalidad (Shapiro-Wilk, Kolmogorov-Smirnov) para determinar si las distribuciones de las variables se ajustan a una distribución normal, un requisito para muchas pruebas paramétricas. Además, llevaremos a cabo pruebas de hipótesis sobre los parámetros de la población, examinando si existen diferencias significativas entre los grupos de tumores benignos y malignos.\\
+
+Un aspecto fundamental de este proyecto será el análisis de las relaciones entre variables. Emplearemos técnicas de análisis de correlación (Pearson, Spearman) para identificar la fuerza y dirección de la asociación entre las características del tumor. También realizaremos pruebas de independencia de variables (chi-cuadrado) para evaluar si existe una relación estadísticamente significativa entre variables categóricas. Finalmente, exploraremos pruebas de homogeneidad para comparar la distribución de variables entre diferentes grupos, contribuyendo a una comprensión más profunda de las diferencias entre tumores benignos y malignos.\\
+
+En resumen, este proyecto pretende ofrecer un análisis estadístico completo y riguroso del dataset "Breast Cancer Wisconsin (Diagnostics)", utilizando una variedad de técnicas descriptivas e inferenciales para extraer información relevante y contribuir a una mejor comprensión de las características y relaciones entre los atributos de los tumores mamarios. Los resultados obtenidos permitirán una mejor comprensión de los datos y podrán servir como base para futuros análisis y modelos predictivos.\\
+
+\newpage
+
 \section{Análisis Descriptivo de los datos}
+
+A continuación se muestra un cuadro con todas las variables presentes en el dataset, de conjunto con su clasificación estadística y su escala de medición.
 
 \begin{table}[ht]
     \centering
@@ -87,48 +101,128 @@ framerule=1pt
             \hline
             \textbf{Variable} & \textbf{Descripción} & \textbf{Clasificación Estadística} & \textbf{Escala de Medición} \\
             \hline
-            ID & Identificador único del paciente & Categórica & Nominal \\
-            diagnosis & Diagnóstico del tumor (M = maligno, B = benigno) & Categórica & Nominal \\
-            radius\_mean & Radio medio del tumor en mm & Continua & Razón \\
-            texture\_mean & Textura media del tumor & Continua & Razón \\
-            perimeter\_mean & Perímetro medio del tumor en mm & Continua & Razón \\
-            area\_mean & Área media del tumor en mm² & Continua & Razón \\
-            smoothness\_mean & Suavidad media del tumor & Continua & Razón \\
-            compactness\_mean & Compacidad media del tumor & Continua & Razón \\
+            ID & Identificador único del paciente & Cualitativa & Nominal \\
+            
+            \textcolor{red}{diagnosis} & Diagnóstico del tumor (1 = maligno, 0 = benigno) & Cualitativa & Nominal \\
+            
+            \textcolor{red}{radius\_mean} & Radio medio del tumor en mm & Continua & Razón \\
+            
+            \textcolor{red}{texture\_mean} & Textura media del tumor & Continua & Razón \\
+            
+            \textcolor{red}{perimeter\_mean} & Perímetro medio del tumor en mm & Continua & Razón \\
+            
+            \textcolor{red}{area\_mean} & Área media del tumor en mm² & Continua & Razón \\
+            
+            \textcolor{red}{smoothness\_mean} & Suavidad media del tumor & Continua & Razón \\
+            
+            \textcolor{red}{compactness\_mean} & Compacidad media del tumor & Continua & Razón \\
+            
             concavity\_mean & Concavidad media del tumor & Continua & Razón \\
+            
             concave points\_mean & Puntos cóncavos medios del tumor & Continua & Razón \\
-            symmetry\_mean & Simetría media del tumor & Continua & Razón \\
+            
+            \textcolor{red}{symmetry\_mean} & Simetría media del tumor & Continua & Razón \\
+            
             fractal dimension\_mean & Dimensión fractal media del tumor & Continua & Razón \\
+            
             radius\_se & Desviación estándar del radio del tumor & Continua & Razón \\
+            
             texture\_se & Desviación estándar de la textura del tumor & Continua & Razón \\
+            
             perimeter\_se & Desviación estándar del perímetro del tumor & Continua & Razón \\
+            
             area\_se & Desviación estándar del área del tumor & Continua & Razón \\
+            
             smoothness\_se & Desviación estándar de la suavidad del tumor & Continua & Razón \\
+            
             compactness\_se & Desviación estándar de la compacidad del tumor & Continua & Razón \\
+            
             concavity\_se & Desviación estándar de la concavidad del tumor & Continua & Razón \\
+            
             concave points\_se & Desviación estándar de los puntos cóncavos del tumor & Continua & Razón \\
+            
             symmetry\_se & Desviación estándar de la simetría del tumor & Continua & Razón \\
+            
             fractal dimension\_se & Desviación estándar de la dimensión fractal del tumor & Continua & Razón \\
-            radius\_worst & Radio máximo del tumor en mm & Continua & Razón \\
-            texture\_worst & Textura máxima del tumor & Continua & Razón \\
-            perimeter\_worst & Perímetro máximo del tumor en mm & Continua & Razón \\
-            area\_worst & Área máxima del tumor en mm² & Continua & Razón \\
-            smoothness\_worst & Suavidad máxima del tumor & Continua & Razón \\
-            compactness\_worst & Compacidad máxima del tumor & Continua & Razón \\
+            
+            \textcolor{red}{radius\_worst} & Radio máximo del tumor en mm & Continua & Razón \\
+            
+            \textcolor{red}{texture\_worst} & Textura máxima del tumor & Continua & Razón \\
+            
+            \textcolor{red}{perimeter\_worst} & Perímetro máximo del tumor en mm & Continua & Razón \\
+            
+            \textcolor{red}{area\_worst} & Área máxima del tumor en mm² & Continua & Razón \\
+            
+            \textcolor{red}{smoothness\_worst} & Suavidad máxima del tumor & Continua & Razón \\
+            
+            \textcolor{red}{compactness\_worst} & Compacidad máxima del tumor & Continua & Razón \\
+            
             concavity\_worst & Concavidad máxima del tumor & Continua & Razón \\
+            
             concave points\_worst & Puntos cóncavos máximos del tumor & Continua & Razón \\
-            symmetry\_worst & Simetría máxima del tumor & Continua & Razón \\
+            
+            \textcolor{red}{symmetry\_worst} & Simetría máxima del tumor & Continua & Razón \\
+            
             fractal dimension\_worst & Dimensión fractal máxima del tumor & Continua & Razón \\
             \hline
         \end{tabular}
     }
 \end{table}
+ 
+Se brindará especial atención a las variables en rojo para el análisis. A continuación se expone una caracterización más detallada de las mismas:
+
+\begin{itemize}
+
+	\item \underline{diagnosis}:
+	
+	\item \underline{radius\_mean}:
+	
+	\item \underline{texture\_mean}:
+	
+	\item \underline{perimeter\_mean}:
+	
+	\item \underline{area\_mean}:
+	
+	\item \underline{smoothness\_mean}:
+	
+	\item \underline{compactness\_mean}:
+	
+	\item \underline{symmetry\_mean}:
+	
+	\item \underline{radius\_worst}:
+	
+	\item \underline{texture\_worst}:
+	
+	\item \underline{perimeter\_worst}:
+	
+	\item \underline{area\_worst}:
+	
+	\item \underline{smoothness\_worst}:
+	
+	\item \underline{compactness\_worst}:
+	
+	\item \underline{symmetry\_worst}:
+	
+ 
+\end{itemize}
+	
+
+
+
+
+
+
+
+
+
+
 
 
 \newpage
 
 \section{Análisis de la distribución}
 
+\subsection{Pruebas de Normalidad}
 
 \subsection{Estimación de parámetros}
 
@@ -137,9 +231,6 @@ framerule=1pt
 \subsubsection{Estimación por Intervalos}
 
 \subsection{Pruebas de Hipótesis}
-
-
-\section{Pruebas de Normalidad}
 
 \subsubsection{Pruebas de Hipótesis para una población}
 
