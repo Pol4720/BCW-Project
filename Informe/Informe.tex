@@ -242,3 +242,100 @@ Se brindará especial atención a las variables en rojo para el análisis. A con
 
 
 \end{document}
+
+
+
+%\documentclass{article}
+%\usepackage[utf8]{inputenc}
+%\usepackage{amsmath}
+%\usepackage{geometry}
+%\geometry{margin=1in}
+%
+%\title{Caracterización de Variables - Dataset Breast Cancer Wisconsin}
+%\author{}
+%\date{}
+%
+%\begin{document}
+%
+%\maketitle
+%
+%\section*{Descripción de Variables}
+%
+%A continuación, se presenta una caracterización detallada de las variables del conjunto de datos \textbf{Breast Cancer Wisconsin (Diagnostic)}:
+%
+%\begin{itemize}
+%    \item \textbf{diagnosis}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Variable categórica que indica si el tumor es maligno o benigno.
+%        \item \textit{Valores posibles:}
+%        $M$ (Maligno), $B$ (Benigno).
+%        \item \textit{Medición:} Determinado a partir del análisis histopatológico.
+%    \end{itemize}
+%
+%    \item \textbf{radius\_mean}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Promedio del radio de las células tumorales.
+%        \item \textit{Medición:} Distancia promedio desde el centro hasta el borde.
+%        \item \textit{Unidades:} Micrómetros ($\mu$m).
+%        \item \textit{Interpretación:} Valores más altos indican células más grandes, lo cual puede asociarse con malignidad.
+%    \end{itemize}
+%
+%    \item \textbf{texture\_mean}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Promedio de la variación en la intensidad de píxeles.
+%        \item \textit{Medición:} Desviación estándar de los valores de intensidad.
+%        \item \textit{Unidades:} Sin unidades (valor adimensional).
+%        \item \textit{Interpretación:} Valores más altos indican mayor heterogeneidad, lo que sugiere malignidad.
+%    \end{itemize}
+%
+%    \item \textbf{perimeter\_mean}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Promedio del perímetro de las células tumorales.
+%        \item \textit{Medición:} Longitud total de la frontera de la célula.
+%        \item \textit{Unidades:} Micrómetros ($\mu$m).
+%    \end{itemize}
+%
+%    \item \textbf{area\_mean}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Promedio del área de las células tumorales.
+%        \item \textit{Medición:} Área calculada a partir de la imagen digitalizada.
+%        \item \textit{Unidades:} Micrómetros cuadrados ($\mu$m$^2$).
+%    \end{itemize}
+%
+%    \item \textbf{smoothness\_mean}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Promedio de la uniformidad del contorno de las células.
+%        \item \textit{Medición:} Variación local de los radios en el contorno.
+%        \item \textit{Unidades:} Valor adimensional.
+%    \end{itemize}
+%
+%    \item \textbf{compactness\_mean}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Promedio de la compacidad de las células.
+%        \item \textit{Medición:} Relación entre el perímetro y el área:
+%        \[
+%        \text{Compactness} = \frac{\text{Perimeter}^2}{\text{Area}} - 1
+%        \]
+%        \item \textit{Unidades:} Valor adimensional.
+%    \end{itemize}
+%
+%    \item \textbf{symmetry\_mean}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Promedio de la simetría de las células.
+%        \item \textit{Medición:} Diferencia entre los radios en distintas direcciones.
+%        \item \textit{Unidades:} Valor adimensional.
+%    \end{itemize}
+%
+%    \item \textbf{radius\_worst, texture\_worst, perimeter\_worst, area\_worst, smoothness\_worst, compactness\_worst, symmetry\_worst}:
+%    \begin{itemize}
+%        \item \textit{Descripción:} Estas variables representan los valores más extremos (peores) observados en la medición de las características anteriores.
+%        \item \textit{Medición:} Se calculan de la misma manera que las variables \_mean pero enfocándose en los valores máximos registrados.
+%    \end{itemize}
+%\end{itemize}
+%
+%\section*{Resumen}
+%Las variables \textbf{radius}, \textbf{perimeter} y \textbf{area} están relacionadas con las dimensiones físicas de las células y se miden en micrómetros ($\mu$m o $\mu$m$^2$).
+%Las variables como \textbf{smoothness}, \textbf{compactness} y \textbf{symmetry} son adimensionales y describen características geométricas e irregularidades del contorno de las células.
+%Los sufijos \textbf{\_mean} indican promedios, mientras que \textbf{\_worst} se refiere a los valores extremos encontrados en las mediciones.
+%
+%\end{document}
