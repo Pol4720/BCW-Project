@@ -14,6 +14,21 @@ def create_correlation_analysis(data_path, variables, significance_level = 0.5):
     output_dir = 'plots_corr'
     os.makedirs(output_dir, exist_ok=True)
 
+    plt.figure(figsize=(12, 12))
+    sns.heatmap(df[variables].corr(method='pearson'), annot=True, cmap='coolwarm', cbar=True, vmin=-1, vmax=1)
+    plt.title('Matriz de Correlación de Pearson', fontsize=16)
+    plt.savefig(os.path.join(output_dir, 'matriz_correlacion_pearson.png'))
+    plt.close()
+
+
+
+    plt.figure(figsize=(12, 12))
+    sns.heatmap(df[variables].corr(method='spearman'), annot=True, cmap='viridis', cbar=True, vmin=-1, vmax=1)
+    plt.title('Matriz de Correlación de Spearman', fontsize=16)
+    plt.savefig(os.path.join(output_dir, 'matriz_correlacion_spearman.png'))
+    plt.close()
+
+
     # Calcular el coeficiente de correlación de Pearson y generar combinaciones de variables
     correlations = df[variables].corr(method='pearson')
     combinations = [(variables[i], variables[j]) for i in range(len(variables)) for j in range(i + 1, len(variables))]

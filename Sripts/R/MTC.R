@@ -1,7 +1,7 @@
 library(MASS)
 
 # Cargar el dataset
-data(Alfa)
+data(data.csv)
 
 # Función para calcular la moda
 get_mode <- function(x) {
@@ -23,8 +23,8 @@ plot_distribution <- function(data, var_name) {
 }
 
 # Iterar sobre cada variable del dataset
-for (var in names(Alfa)) {
-  data <- Alfa[[var]]
+for (var in names(data.csv)) {
+  data <- data.csv[[var]]
   
   # Medidas de tendencia central
   central_measures <- c(mean = mean(data), mode = get_mode(data), median = median(data),

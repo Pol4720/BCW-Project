@@ -63,7 +63,7 @@ def test_normalidad_anderson_darling(file_path, significance_level=0.05, output_
 
     # Resultados
     results = []
-    for col in numeric_cols:
+    for col in variables:
         values = data[col].dropna()  # Eliminar valores nulos
 
         if len(values) == 0:
@@ -132,6 +132,10 @@ def test_normalidad_anderson_darling(file_path, significance_level=0.05, output_
     print(f"Tabla resumen guardada en: {table_img_path}")
 # Ruta al archivo CSV
 file_path = "/Users/mauriciosundejimenez/Downloads/ProyectoEstadistica/BCW-Project/Dataset/data.csv"
+variables = ['diagnosis', 'radius_mean', 'texture_mean', 'perimeter_mean', 
+             'area_mean', 'smoothness_mean', 'compactness_mean', 'symmetry_mean', 
+             'radius_worst', 'texture_worst', 'perimeter_worst', 'area_worst',
+             'smoothness_worst', 'compactness_worst', 'symmetry_worst']  
 
 # Llamar a la función con un nivel de significancia del 5%
 test_normalidad_anderson_darling(file_path)

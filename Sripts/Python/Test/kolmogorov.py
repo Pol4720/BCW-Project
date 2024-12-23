@@ -37,11 +37,11 @@ def test_normalidad_kolmogorov_smirnov(file_path, significance_level=0.05, outpu
         print("El dataset no contiene columnas numéricas.")
         return
 
-    print(f"Realizando la prueba de Kolmogorov-Smirnov para {len(numeric_cols)} columnas numéricas...\n")
+    print(f"Realizando la prueba de Kolmogorov-Smirnov para {len(variables)} columnas numéricas...\n")
 
     # Resultados
     results = []
-    for col in numeric_cols:
+    for col in variables:
         values = data[col].dropna()  # Eliminar valores nulos
 
         # Ajustar la media y desviación estándar de los datos a una distribución normal
@@ -100,6 +100,10 @@ def test_normalidad_kolmogorov_smirnov(file_path, significance_level=0.05, outpu
 
 # Ruta al archivo CSV
 file_path = "/Users/mauriciosundejimenez/Downloads/ProyectoEstadistica/BCW-Project/Dataset/data.csv"
+variables = ['diagnosis', 'radius_mean', 'texture_mean', 'perimeter_mean', 
+             'area_mean', 'smoothness_mean', 'compactness_mean', 'symmetry_mean', 
+             'radius_worst', 'texture_worst', 'perimeter_worst', 'area_worst',
+             'smoothness_worst', 'compactness_worst', 'symmetry_worst']  
 
 # Llamar a la función con un nivel de significancia del 5%
 test_normalidad_kolmogorov_smirnov(file_path)
