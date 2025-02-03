@@ -1,0 +1,7 @@
+Ecuación del modelo: perimeter_worst = 87.01 + 54.36 * diagnosis
+
+Justificación:
+El modelo no cumple con los supuestos de linealidad porque:
+2. Los residuos no se distribuyen aleatoriamente alrededor de cero.
+3. El coeficiente de determinación (R^2) es 0.61, lo que indica un mal ajuste.
+4. El error cuadrático medio (MSE) es 436.26, lo que indica que los errores son grandes.

@@ -1,0 +1,20 @@
+mean_residuals: 5.853548460238083e-17
+sum_residuals: 3.3306690738754696e-14
+ks_test_statistic: 0.4470687594459014
+ks_test_pvalue: 3.105779818396799e-104
+durbin_watson_statistic: 1.9459393489291463
+breusch_pagan_pvalue: 0.22693901913808098
+model_equation:                                Coef.    Std.Err.         z     P>|z|       [0.025       0.975]
+const                     -75.407292   16.253409 -4.639475  0.000003  -107.263389   -43.551196
+radius_mean                 1.761751    0.400695  4.396741  0.000011     0.976404     2.547098
+smoothness_mean           134.234402   60.821776  2.207012  0.027313    15.025911   253.442893
+compactness_mean          -62.300596   24.386755 -2.554690  0.010628  -110.097756   -14.503435
+concavity_mean             64.440480   14.657286  4.396481  0.000011    35.712728    93.168232
+radius_se                  24.795382    7.032138  3.526009  0.000422    11.012645    38.578119
+texture_se                 -3.116882    1.241068 -2.511452  0.012024    -5.549331    -0.684434
+smoothness_se             404.965775  164.980592  2.454627  0.014103    81.609757   728.321793
+fractal_dimension_se    -2122.164836  557.145184 -3.808998  0.000140 -3214.149332 -1030.180341
+texture_worst               0.560933    0.133360  4.206160  0.000026     0.299553     0.822314
+fractal_dimension_worst   277.330243   79.732444  3.478261  0.000505   121.057524   433.602962
+variables_removed: [('concave points_mean', np.float64(0.9736982652922751)), ('fractal_dimension_mean', np.float64(0.6827205504360427)), ('concave points_worst', np.float64(0.5393083913432954)), ('smoothness_worst', np.float64(0.40502662244906185)), ('texture_mean', np.float64(0.3319366897060605)), ('concavity_worst', np.float64(0.2631958005925682)), ('compactness_worst', np.float64(0.3455028070099835)), ('symmetry_mean', np.float64(0.3142234921022167)), ('symmetry_se', np.float64(0.17432758637593226)), ('compactness_se', np.float64(0.34433089889386914)), ('concavity_se', np.float64(0.11028300313267267)), ('concave points_se', np.float64(0.1201134364928894)), ('symmetry_worst', np.float64(0.07719925604843254))]
+

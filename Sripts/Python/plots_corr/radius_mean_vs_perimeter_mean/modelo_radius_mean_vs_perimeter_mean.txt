@@ -1,0 +1,7 @@
+Ecuación del modelo: perimeter_mean = -5.23 + 6.88 * radius_mean
+
+Justificación:
+El modelo no cumple con los supuestos de linealidad porque:
+2. Los residuos no se distribuyen aleatoriamente alrededor de cero.
+3. El coeficiente de determinación (R^2) es 1.00, lo que indica un mal ajuste.
+4. El error cuadrático medio (MSE) es 2.53, lo que indica que los errores son grandes.
