@@ -115,11 +115,4 @@ def create_analysis_plots(data_path, variables):
         plt.savefig(os.path.join(var_dir, f'distribuciones_conocidas_{var}.png'))
         plt.close()
 
-# Ruta del dataset y variables a analizar
-data_path = "/Users/mauriciosundejimenez/Downloads/ProyectoEstadistica/BCW-Project/Dataset/data.csv"  # Cambia esto por la ruta real del dataset
-variables = ['diagnosis', 'radius_mean', 'texture_mean', 'perimeter_mean', 
-             'area_mean', 'smoothness_mean', 'compactness_mean', 'symmetry_mean', 
-             'radius_worst', 'texture_worst', 'perimeter_worst', 'area_worst',
-             'smoothness_worst', 'compactness_worst', 'symmetry_worst']  
 
-create_analysis_plots(data_path, variables)

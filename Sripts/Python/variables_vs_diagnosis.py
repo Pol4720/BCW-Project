@@ -3,25 +3,27 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-variables = ['radius_mean', 'texture_mean', 'perimeter_mean',
-             'area_mean', 'smoothness_mean', 'compactness_mean', 'symmetry_mean',
-             'radius_worst', 'texture_worst', 'perimeter_worst', 'area_worst',
-             'smoothness_worst', 'compactness_worst', 'symmetry_worst']
+def plot_variable_vs_diagnosis(data_path, variable):
+    """
+    Plots the distribution of a specified variable against the diagnosis from a dataset and saves the plot as a PNG file.
+    Parameters:
+    data_path (str): The file path to the CSV dataset.
+    variable (str): The name of the variable to plot against the diagnosis.
+    Returns:
+    str: The file path to the saved plot image.
+    """
+    df = pd.read_csv(data_path)
+    output_dir = 'plots_diagnosis'
+    os.makedirs(output_dir, exist_ok=True)
 
-data_path = "/Users/mauriciosundejimenez/Downloads/ProyectoEstadistica/BCW-Project/Dataset/data.csv"  # Cambia esto por la ruta real del dataset
-df = pd.read_csv(data_path)
-
-output_dir = 'plots_diagnosis'
-os.makedirs(output_dir, exist_ok=True)
-
-for var in variables:
     plt.figure(figsize=(10, 6))
-    sns.histplot(data=df, x=var, hue='diagnosis', element='step', stat='density', common_norm=False)
-    plt.title(f'Distribución de {var} por Diagnosis', fontsize=16)
-    plt.xlabel(var, fontsize=14)
+    sns.histplot(data=df, x=variable, hue='diagnosis', element='step', stat='density', common_norm=False)
+    plt.title(f'Distribución de {variable} por Diagnosis', fontsize=16)
+    plt.xlabel(variable, fontsize=14)
     plt.ylabel('Densidad', fontsize=14)
     plt.grid(True)
-    plt.savefig(os.path.join(output_dir, f'distribucion_{var}_por_diagnosis.png'))
+    plot_path = os.path.join(output_dir, f'distribucion_{variable}_por_diagnosis.png')
+    plt.savefig(plot_path)
     plt.close()
-
-    # output_dir = os.path.join('Plots', 'variables_vs_diagnosis')
+    
+    return plot_path

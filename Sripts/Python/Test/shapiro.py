@@ -42,9 +42,25 @@ def test_normalidad_shapiro_wilk(file_path, significance_level=0.05, output_dir=
     # Lista para almacenar resultados
     results = []
 
+    # Función para eliminar outliers
+    def remove_outliers(series):
+        q1 = series.quantile(0.25)
+        q3 = series.quantile(0.75)
+        iqr = q3 - q1
+        lower_bound = q1 - 1.5 * iqr
+        upper_bound = q3 + 1.5 * iqr
+        return series[(series >= lower_bound) & (series <= upper_bound)]
+
     # Realizar el test de Shapiro-Wilk para cada columna
-    for col in variables:
+    for col in numeric_cols:
         values = data[col].dropna()  # Eliminar valores nulos
+        values = remove_outliers(values)  # Eliminar outliers
+        if len(values) > 40:
+            values = values.sample(40, random_state=1)  # Tomar una muestra aleatoria de tamaño 40
+        elif len(values) < 3:
+            print(f"No hay suficientes datos para la columna '{col}' después de eliminar outliers.")
+            continue
+
         stat, p_value = shapiro(values)  # Test de Shapiro-Wilk
 
         # Interpretar el resultado
@@ -91,12 +107,3 @@ def test_normalidad_shapiro_wilk(file_path, significance_level=0.05, output_dir=
     plt.close()
     print(f"Tabla resumen guardada en: {table_img_path}")
 
-# Ruta al archivo CSV
-file_path = "/Users/mauriciosundejimenez/Downloads/ProyectoEstadistica/BCW-Project/Dataset/data.csv"
-variables = ['diagnosis', 'radius_mean', 'texture_mean', 'perimeter_mean', 
-             'area_mean', 'smoothness_mean', 'compactness_mean', 'symmetry_mean', 
-             'radius_worst', 'texture_worst', 'perimeter_worst', 'area_worst',
-             'smoothness_worst', 'compactness_worst', 'symmetry_worst']  
-
-# Llamar a la función con un nivel de significancia del 5%
-test_normalidad_shapiro_wilk(file_path)

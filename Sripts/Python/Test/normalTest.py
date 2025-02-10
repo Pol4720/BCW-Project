@@ -26,13 +26,14 @@ def calcular_p_value(statistic):
 
     return p_value
 
-def test_normalidad_anderson_darling(file_path, significance_level=0.05, output_dir="plots"):
+def test_normalidad_anderson_darling(file_path, variables, significance_level=0.05, output_dir="plots"):
     """
     Realiza la prueba de Anderson-Darling para evaluar la normalidad de cada columna numérica en un archivo CSV
     y genera una tabla resumen con los resultados.
 
     Args:
         file_path (str): Ruta al archivo CSV.
+        variables (list): Lista de nombres de columnas a evaluar.
         significance_level (float): Nivel de significancia para el test. Default = 0.05.
         output_dir (str): Directorio donde se guardan las salidas.
 
@@ -59,7 +60,14 @@ def test_normalidad_anderson_darling(file_path, significance_level=0.05, output_
         print("El dataset no contiene columnas numéricas.")
         return
 
-    print(f"Realizando la prueba de Anderson-Darling para {len(numeric_cols)} columnas numéricas...\n")
+    # Filtrar las variables proporcionadas que sean numéricas
+    variables = [var for var in variables if var in numeric_cols]
+
+    if len(variables) == 0:
+        print("No se proporcionaron columnas numéricas válidas.")
+        return
+
+    print(f"Realizando la prueba de Anderson-Darling para {len(variables)} columnas numéricas...\n")
 
     # Resultados
     results = []
@@ -130,12 +138,4 @@ def test_normalidad_anderson_darling(file_path, significance_level=0.05, output_
     plt.savefig(table_img_path, bbox_inches='tight', dpi=300)
     plt.close()
     print(f"Tabla resumen guardada en: {table_img_path}")
-# Ruta al archivo CSV
-file_path = "/Users/mauriciosundejimenez/Downloads/ProyectoEstadistica/BCW-Project/Dataset/data.csv"
-variables = ['diagnosis', 'radius_mean', 'texture_mean', 'perimeter_mean', 
-             'area_mean', 'smoothness_mean', 'compactness_mean', 'symmetry_mean', 
-             'radius_worst', 'texture_worst', 'perimeter_worst', 'area_worst',
-             'smoothness_worst', 'compactness_worst', 'symmetry_worst']  
 
-# Llamar a la función con un nivel de significancia del 5%
-test_normalidad_anderson_darling(file_path)

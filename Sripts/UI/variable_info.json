@@ -1,0 +1,107 @@
+{
+    "diagnosis": {
+        "descripcion": "Variable categórica que indica si el tumor es maligno o benigno.",
+        "clasificacion": "Cualitativa",
+        "escala": "Nominal",
+        "medicion": "Determinado a partir del análisis histopatológico.",
+        "valores": "1 (Maligno), 0 (Benigno)"
+    },
+    "radius_mean": {
+        "descripcion": "Promedio del radio de las células tumorales.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Distancia promedio desde el centro hasta el borde.",
+        "unidades": "Micrómetros (μm)",
+        "interpretacion": "Valores más altos indican células más grandes, lo cual puede asociarse con malignidad."
+    },
+    "texture_mean": {
+        "descripcion": "Textura media de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Promedio de los valores de intensidad.",
+        "interpretacion": "Valores más altos indican mayor heterogeneidad, lo que sugiere malignidad."
+    },
+    "perimeter_mean": {
+        "descripcion": "Perímetro medio de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Longitud total de la frontera de la célula.",
+        "unidades": "Micrómetros (μm)"
+    },
+    "area_mean": {
+        "descripcion": "Área media de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Área calculada a partir de la imagen digitalizada.",
+        "unidades": "Micrómetros cuadrados (μm²)"
+    },
+    "smoothness_mean": {
+        "descripcion": "Promedio de la suavidad de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Variación local de los radios en el contorno.",
+        "unidades": "Valor adimensional"
+    },
+    "compactness_mean": {
+        "descripcion": "Promedio de la compacidad de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Relación entre el perímetro y el área.",
+        "unidades": "Valor adimensional"
+    },
+    "symmetry_mean": {
+        "descripcion": "Promedio de la simetría de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Diferencia entre los radios en distintas direcciones.",
+        "unidades": "Valor adimensional"
+    },
+    "radius_worst": {
+        "descripcion": "Radio máximo de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Distancia máxima desde el centro hasta el borde.",
+        "unidades": "Micrómetros (μm)"
+    },
+    "texture_worst": {
+        "descripcion": "Textura máxima de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Máximo de los valores de intensidad."
+    },
+    "perimeter_worst": {
+        "descripcion": "Perímetro máximo de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Longitud máxima de la frontera de la célula.",
+        "unidades": "Micrómetros (μm)"
+    },
+    "area_worst": {
+        "descripcion": "Área máxima de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Área máxima calculada a partir de la imagen digitalizada.",
+        "unidades": "Micrómetros cuadrados (μm²)"
+    },
+    "smoothness_worst": {
+        "descripcion": "Suavidad máxima de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Máxima variación local de los radios en el contorno.",
+        "unidades": "Valor adimensional"
+    },
+    "compactness_worst": {
+        "descripcion": "Compacidad máxima de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Máxima relación entre el perímetro y el área.",
+        "unidades": "Valor adimensional"
+    },
+    "symmetry_worst": {
+        "descripcion": "Simetría máxima de las células del tumor.",
+        "clasificacion": "Cuantitativa Continua",
+        "escala": "Razón",
+        "medicion": "Máxima diferencia entre los radios en distintas direcciones.",
+        "unidades": "Valor adimensional"
+    }
+}

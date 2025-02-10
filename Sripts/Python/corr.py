@@ -117,11 +117,3 @@ def guardar_tabla(df):
             cell.set_facecolor('#E6F7FF' if i % 2 == 0 else '#FFF3E6')  # Colores alternos para las filas
         cell.set_edgecolor('lightgrey')  # Color del borde de las celdas
 
-# Ruta del dataset y lista de variables a analizar
-data_path = "/Users/mauriciosundejimenez/Downloads/ProyectoEstadistica/BCW-Project/Dataset/data.csv"  # Cambia esto por la ruta real del dataset
-variables = ['diagnosis', 'radius_mean', 'texture_mean', 'perimeter_mean',
-             'area_mean', 'smoothness_mean', 'compactness_mean', 'symmetry_mean',
-             'radius_worst', 'texture_worst', 'perimeter_worst', 'area_worst',
-             'smoothness_worst', 'compactness_worst', 'symmetry_worst']
-
-create_correlation_analysis(data_path, variables)
